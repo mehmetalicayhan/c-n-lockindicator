@@ -55,7 +55,6 @@ Window {
 
         Switch{
             y:30
-            anchors.fill: myWindow
             anchors.horizontalCenter: parent.horizontalCenter
             id:capsStatus
             checked: isCapsLock
@@ -66,7 +65,6 @@ Window {
 
         Switch{
             y:70
-            anchors.fill: myWindow
 
             anchors.horizontalCenter: parent.horizontalCenter
             text: "NumLock"
