@@ -15,6 +15,20 @@ Window {
     height: 150
     flags: Qt.FramelessWindowHint | Qt.Window
     color: "transparent"
+
+    function parseStatus(stdOutStatus){
+        const arrStatus = stdOutStatus.split(',');
+        arrStatus[0] = arrStatus[0]==="true"?true:false;
+        arrStatus[1] = arrStatus[1]==="true"?true:false;
+        return arrStatus;
+    }
+
+    function setStatus(){
+        const status = parseStatus(kl.returnStatus());
+        isCapsLock = status[0]
+        isNumLock = status[1]
+    }
+
     SystemTrayIcon {
         id: systemTrayIcon
         visible: true
@@ -98,8 +112,8 @@ Window {
         id:kl
         Component.onCompleted:
         {
-            isCapsLock = kl.returnCapsLockStatus()
-            isNumLock = kl.returnNumLockStatus()
+            setStatus()
+
         }
 
     }
@@ -110,8 +124,9 @@ Window {
         repeat:true
 
         onTriggered: {
-            isCapsLock=kl.returnCapsLockStatus()
-            isNumLock = kl.returnNumLockStatus()
+            setStatus()
+           // isCapsLock=kl.returnCapsLockStatus()
+           // isNumLock = kl.returnNumLockStatus()
 
         }
     }

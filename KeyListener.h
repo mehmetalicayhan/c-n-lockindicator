@@ -38,23 +38,24 @@ private:
     }
 
 public:
-    void setCapsLockStatus(){
-        isCapsLockOpen=!isCapsLockOpen;
-        qDebug()<<isCapsLockOpen;
-    }
-
     KeyListener():QObject() {
         runProcess();
     }
 
 public slots:
-    bool returnCapsLockStatus(){
+    QString returnStatus(){
         runProcess();
-        return isCapsLockOpen;
+        QString isCaps = isCapsLockOpen ? "true" : "false";
+        QString isNum = isNumLockOpen ? "true" : "false";
+        return isCaps+","+isNum;
     }
-    bool returnNumLockStatus(){
-        runProcess();
-        return isNumLockOpen;
-    }
+    //    bool returnCapsLockStatus(){
+    //        runProcess();
+    //        return isCapsLockOpen;
+    //    }
+    //    bool returnNumLockStatus(){
+    //        runProcess();
+    //        return isNumLockOpen;
+    //    }
 };
 #endif // KEYLISTENER_H
