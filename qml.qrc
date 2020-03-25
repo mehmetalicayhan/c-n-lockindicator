@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>assets/lockOff.png</file>
+        <file>assets/lockOn.png</file>
+        <file>assets/numLockOff.png</file>
+        <file>assets/numLockOn.png</file>
+    </qresource>
+</RCC>
