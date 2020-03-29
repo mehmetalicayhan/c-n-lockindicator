@@ -4,7 +4,7 @@
     c-n-lockindicator 
 </h1>
 
-## A simple capslock and numlock indicator
+## A simple capslock and numlock indicator developed using Qt and QML
 
 > <h2> You can see the change on the status bar when you press Capslock or numlock 
 
