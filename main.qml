@@ -32,16 +32,19 @@ Window {
     SystemTrayIcon {
         id: systemTrayIcon
         visible: true
-        iconSource: isCapsLock ? "qrc:/assets/lockOn.png" : "qrc:/assets/lockOff.png"
+        iconSource: isCapsLock ? "qrc:/assets/cLockOn.png" : "qrc:/assets/cLockOff.png"
         menu: Menu {
             MenuItem {
-                text: qsTr("Show")
-                onTriggered: myWindow.show()
+                text: qsTr("Show/Hide")
+                onTriggered:{
+                    if(myWindow.visible){
+                        myWindow.hide()
+                    } else {
+                        myWindow.show()
+                    }
+                }
             }
-            MenuItem {
-                text: qsTr("Hide")
-                onTriggered: myWindow.hide()
-            }
+
             MenuItem {
                 text: qsTr("Quit")
                 onTriggered: Qt.quit()
@@ -52,7 +55,7 @@ Window {
     SystemTrayIcon {
         id: systemTrayIcon2
         visible: true
-        iconSource: isNumLock ? "qrc:/assets/numLockOn.png" : "qrc:/assets/numLockOff.png"
+        iconSource: isNumLock ? "qrc:/assets/nLockOn.png" : "qrc:/assets/nLockOff.png"
         menu: Menu {
         }
 
@@ -125,29 +128,13 @@ Window {
 
         onTriggered: {
             setStatus()
-           // isCapsLock=kl.returnCapsLockStatus()
-           // isNumLock = kl.returnNumLockStatus()
+            // isCapsLock=kl.returnCapsLockStatus()
+            // isNumLock = kl.returnNumLockStatus()
 
         }
     }
 
-    //    Shortcut {
-    //        sequence: "CapsLock"
-    //        context: Qt.ApplicationShortcut
-    //        onActivated:{
-    //            isCapsLock=!isCapsLock
-    //        }
 
-    //    }
-
-    //    Shortcut {
-    //        sequence: "NumLock"
-    //        context: Qt.ApplicationShortcut
-    //        onActivated:{
-    //            isNumLock=!isNumLock
-    //        }
-
-    //    }
 
     Component.onCompleted:{
         //myWindow.hide()

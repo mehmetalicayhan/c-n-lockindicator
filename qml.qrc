@@ -5,5 +5,9 @@
         <file>assets/lockOn.png</file>
         <file>assets/numLockOff.png</file>
         <file>assets/numLockOn.png</file>
+        <file>assets/cLockOff.png</file>
+        <file>assets/cLockOn.png</file>
+        <file>assets/nLockOff.png</file>
+        <file>assets/nLockOn.png</file>
     </qresource>
 </RCC>
