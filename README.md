@@ -10,9 +10,7 @@
 
 ![](doc/status1.png)
 
-![](doc/status2.png)
-
-> <h2>Second press  of capslock : 
+![](doc/status2.png) 
 
 ![](doc/status3.png)
 
